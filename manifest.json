@@ -1,0 +1,17 @@
+{
+  "name": "Analyze your tweets",
+  "version": "0.1",
+  "permissions": ["*://*.twitter.com/*"],
+  "content_security_policy": "script-src 'self' https://*.twitter.com/*; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/home"],
+      "js": ["index.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "manifest_version": 2,
+  "description": "A sample chrome extension showing how to use einstein to analyze tweets",
+  "icons": { "32": "icon.png" },
+  "web_accessible_resources": ["analyze.png"]
+}
